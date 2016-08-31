@@ -674,9 +674,9 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             % Sagittal
             axes(Hmain.axis(2));
             cla
-            slice_t = rot90(squeeze(currentTemplate(:,currentsliceC,:)));
-            slice_o = rot90(squeeze(currentVolume_orig(:,currentsliceC,:)));
-            slice_r = rot90(squeeze(currentVolume_recons(:,currentsliceC,:)));
+            slice_t = rot90(squeeze(currentTemplate(currentsliceS,:,:)));
+            slice_o = rot90(squeeze(currentVolume_orig(currentsliceS,:,:)));
+            slice_r = rot90(squeeze(currentVolume_recons(currentsliceS,:,:)));
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
@@ -690,9 +690,9 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             % Transversal
             axes(Hmain.axis(3));
             cla
-            slice_t = rot90(squeeze(currentTemplate(:,currentsliceC,:)));
-            slice_o = rot90(squeeze(currentVolume_orig(:,currentsliceC,:)));
-            slice_r = rot90(squeeze(currentVolume_recons(:,currentsliceC,:)));
+            slice_t = rot90(squeeze(currentTemplate(:,:,currentsliceT)));
+            slice_o = rot90(squeeze(currentVolume_orig(:,:,currentsliceT)));
+            slice_r = rot90(squeeze(currentVolume_recons(:,:,currentsliceT)));
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;

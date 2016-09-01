@@ -228,7 +228,6 @@ Hmain.cmRecons = uicontrol('Parent',Hmain.volumesPanel,...
     'FontSize',12,...
     'Position',cmReconsPosition);
 
-
 % listboxW = 0.96;
 % listboxH = 0.96;
 % listboxPosition = [0.02 0.02 listboxW listboxH];
@@ -626,7 +625,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             slice_t = rot90(squeeze(currentTemplate(:,currentsliceC,:)));
             slice_r = rot90(squeeze(currentVolume_recons(:,currentsliceC,:)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
-            overlay = slice_r-slice_t;
+            overlay = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(green);
@@ -637,7 +636,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             slice_t = rot90(squeeze(currentTemplate(currentsliceS,:,:)));
             slice_r = rot90(squeeze(currentVolume_recons(currentsliceS,:,:)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
-            overlay = slice_r-slice_t;
+            overlay = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(green);
@@ -648,7 +647,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             slice_t = rot90(squeeze(currentTemplate(:,:,currentsliceT)));
             slice_r = rot90(squeeze(currentVolume_recons(:,:,currentsliceT)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
-            overlay = slice_r-slice_t;
+            overlay = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(green);
@@ -663,8 +662,8 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             slice_r = rot90(squeeze(currentVolume_recons(:,currentsliceC,:)));
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
-            overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_o = slice_o-slice_t; 
+            overlay_r = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(red);
@@ -680,7 +679,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_r = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(red);
@@ -696,7 +695,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_r = slice_r;
             imagesc(slice_t); axis equal, axis off, colormap(gray)
             hold on
             h = imshow(red);
@@ -714,7 +713,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_r = slice_r;
             %imagesc(slice_t); axis equal, axis off, colormap(gray)
             h = imshow(red);
             set(h,'Alphadata', overlay_o/max(overlay_o(:)));
@@ -730,7 +729,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_r = slice_r;
             %imagesc(slice_t); axis equal, axis off, colormap(gray)
             h = imshow(red);
             set(h,'Alphadata', overlay_o/max(overlay_o(:)));
@@ -746,7 +745,7 @@ Hmain.editTime = uicontrol('Parent',Hmain.controlsPanel,...
             red = cat(3,ones(size(slice_t)),zeros(size(slice_t)),zeros(size(slice_t)));
             green = cat(3,zeros(size(slice_t)),ones(size(slice_t)),zeros(size(slice_t)));
             overlay_o = slice_o-slice_t;
-            overlay_r = slice_r-slice_t;
+            overlay_r = slice_r;
             %imagesc(slice_t); axis equal, axis off, colormap(gray)
             h = imshow(red);
             set(h,'Alphadata', overlay_o/max(overlay_o(:)));
